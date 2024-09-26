@@ -6,6 +6,6 @@ interface BurgerProps {
   layers: Layer[];
 }
 
-const Burger: FC<BurgerProps> = ({ layers }) => <div className='Burger'>{layers.map((x) => x.component)}</div>;
+const Burger: FC<BurgerProps> = ({ layers }) => <div className='Burger'>{layers.map((x) => createElement(x.component))}</div>;
 
 export default Burger;

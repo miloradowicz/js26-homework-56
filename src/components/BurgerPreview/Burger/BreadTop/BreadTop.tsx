@@ -1,9 +1,11 @@
 import './BreadTop.css';
+import Seeds1 from './Seeds1/Seeds1';
+import Seeds2 from './Seeds2/Seeds2';
 
 const BreadTop = () => (
   <div className='BreadTop'>
-    <div className='Seeds1'></div>
-    <div className='Seeds2'></div>
+    <Seeds1 />
+    <Seeds2 />
   </div>
 );
 

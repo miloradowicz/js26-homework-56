@@ -1,4 +1,0 @@
-.layout {
-  display: grid;
-  grid-template: 'builder preview' / 1fr 1fr;
-}

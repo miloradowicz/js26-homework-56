@@ -1,10 +1,9 @@
 import { BuilderIngredient, Ingredient, IngredientType } from './types.d';
-import { ingredients } from './static-data.ts';
+import { ingredients, basePrice } from './static-data.ts';
 import { useState } from 'react';
 import BurgerBuilder from './components/BurgerBuilder/BurgerBuilder.tsx';
 import BurgerPreview from './components/BurgerPreview/BurgerPreview';
 import './App.css';
-import Layout from './components/Layout/Layout.tsx';
 
 const selectables = Object.values(ingredients).filter((x) => x.type === IngredientType.Stuffing);
 
@@ -15,30 +14,41 @@ const App = () => {
     const item = selectables.find((y) => y.id === x.id);
 
     if (item !== undefined) {
-      setSelection((selection) => [...selection, { ...item }]);
+      setSelection((selection) => [{ ...item }, ...selection]);
     }
   };
 
   const onItemDelete = (x: BuilderIngredient) => {
     setSelection((selection) => {
-      const reverseCopy = [...selection].reverse();
+      const copy = [...selection];
 
-      const i = reverseCopy.findIndex((y) => y.id === x.id);
+      const i = copy.findIndex((y) => y.id === x.id);
 
       if (i >= 0) {
-        reverseCopy.splice(i, 1);
+        copy.splice(i, 1);
       }
 
-      return reverseCopy.reverse();
+      return copy;
     });
   };
 
   return (
     <>
-      <Layout>
-        <BurgerBuilder ingredients={selectables} selection={selection} onItemAdd={onItemAdd} onItemDelete={onItemDelete} />
-        <BurgerPreview ingredients={[ingredients.breadTop, ...selection, ingredients.breadBottom]} />
-      </Layout>
+      <h1>Build your dream burger!</h1>
+      <div className='container mx-auto d-flex flex-column flex-md-row'>
+        <div className='col-12 col-md-6'>
+          <BurgerBuilder
+            ingredients={selectables}
+            selection={selection}
+            price={selection.reduce((a, x) => a + (x.price ?? 0), basePrice)}
+            onItemAdd={onItemAdd}
+            onItemDelete={onItemDelete}
+          />
+        </div>
+        <div className='col-12 col-md-6'>
+          <BurgerPreview ingredients={[ingredients.breadTop, ...selection, ingredients.breadBottom]} />
+        </div>
+      </div>
     </>
   );
 };

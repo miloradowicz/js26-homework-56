@@ -6,7 +6,7 @@ export enum IngredientType {
 export interface BuilderIngredient {
   get id(): number;
   get displayName(): string;
-  get price(): number;
+  get price(): number | undefined;
   get img(): string | undefined;
 }
 

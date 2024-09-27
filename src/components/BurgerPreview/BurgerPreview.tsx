@@ -7,7 +7,7 @@ interface BurgerPreviewProps {
 }
 
 const BurgerPreview: FC<BurgerPreviewProps> = ({ ingredients }) => (
-  <div>
+  <div className='container'>
     <h3>Burger</h3>
     <Burger ingredients={ingredients} />
   </div>

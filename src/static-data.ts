@@ -16,10 +16,12 @@ export interface Ingredients {
 }
 
 export const ingredients: Ingredients = {
-  bacon: { id: 0, displayName: 'Bacon', price: 10, type: IngredientType.Stuffing, img: bacon, component: Bacon },
-  breadBottom: { id: 1, displayName: 'Bread bottom', price: 10, type: IngredientType.Bread, img: undefined, component: BreadBottom },
-  breadTop: { id: 2, displayName: 'Bread top', price: 10, type: IngredientType.Bread, img: undefined, component: BreadTop },
-  cheese: { id: 3, displayName: 'Cheese', price: 10, type: IngredientType.Stuffing, img: cheese, component: Cheese },
-  meat: { id: 4, displayName: 'Meat', price: 10, type: IngredientType.Stuffing, img: meat, component: Meat },
+  bacon: { id: 0, displayName: 'Bacon', price: 60, type: IngredientType.Stuffing, img: bacon, component: Bacon },
+  breadBottom: { id: 1, displayName: 'Bread bottom', price: undefined, type: IngredientType.Bread, img: undefined, component: BreadBottom },
+  breadTop: { id: 2, displayName: 'Bread top', price: undefined, type: IngredientType.Bread, img: undefined, component: BreadTop },
+  cheese: { id: 3, displayName: 'Cheese', price: 50, type: IngredientType.Stuffing, img: cheese, component: Cheese },
+  meat: { id: 4, displayName: 'Meat', price: 80, type: IngredientType.Stuffing, img: meat, component: Meat },
   salad: { id: 5, displayName: 'Salad', price: 10, type: IngredientType.Stuffing, img: salad, component: Salad },
 };
+
+export const basePrice = 30;

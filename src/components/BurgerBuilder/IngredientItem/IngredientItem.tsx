@@ -1,6 +1,6 @@
 import { FC, MouseEventHandler } from 'react';
 import { BuilderIngredient } from '../../../types';
-import './Ingredient.css';
+import './IngredientItem.css';
 
 interface IngredientProps {
   ingredient: BuilderIngredient;
@@ -10,7 +10,7 @@ interface IngredientProps {
 }
 
 const Ingredient: FC<IngredientProps> = ({ ingredient, amount, onAdd, onDelete }) => (
-  <li>
+  <li className='ingredient-item'>
     <button type='button' onClick={onAdd}>
       <img src={ingredient.img} alt={ingredient.displayName} />
       <span>{ingredient.displayName}</span>

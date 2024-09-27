@@ -4,17 +4,22 @@ import BreadTop from './components/BurgerPreview/Burger/BreadTop/BreadTop';
 import Cheese from './components/BurgerPreview/Burger/Cheese/Cheese';
 import Meat from './components/BurgerPreview/Burger/Meat/Meat';
 import Salad from './components/BurgerPreview/Burger/Salad/Salad';
-import { IngredientType, Ingredient } from './types';
+import { IngredientType, Ingredient } from './types.d';
 
-interface Ingredients {
+import bacon from './assets/bacon-svgrepo-com.svg';
+import cheese from './assets/cheese-wedge-svgrepo-com.svg';
+import meat from './assets/steak-meat-svgrepo-com.svg';
+import salad from './assets/salad-svgrepo-com.svg';
+
+export interface Ingredients {
   [key: string]: Ingredient;
 }
 
 export const ingredients: Ingredients = {
-  bacon: { displayName: 'Bacon', price: 10, type: IngredientType.Stuffing, img: '', component: Bacon },
-  breadBottom: { displayName: 'Bread bottom', price: 10, type: IngredientType.Bread, img: '', component: BreadBottom },
-  breadTop: { displayName: 'Bread top', price: 10, type: IngredientType.Bread, img: '', component: BreadTop },
-  cheese: { displayName: 'Cheese', price: 10, type: IngredientType.Stuffing, img: '', component: Cheese },
-  meat: { displayName: 'Meat', price: 10, type: IngredientType.Stuffing, img: '', component: Meat },
-  salad: { displayName: 'Salad', price: 10, type: IngredientType.Stuffing, img: '', component: Salad },
+  bacon: { id: 0, displayName: 'Bacon', price: 10, type: IngredientType.Stuffing, img: bacon, component: Bacon },
+  breadBottom: { id: 1, displayName: 'Bread bottom', price: 10, type: IngredientType.Bread, img: undefined, component: BreadBottom },
+  breadTop: { id: 2, displayName: 'Bread top', price: 10, type: IngredientType.Bread, img: undefined, component: BreadTop },
+  cheese: { id: 3, displayName: 'Cheese', price: 10, type: IngredientType.Stuffing, img: cheese, component: Cheese },
+  meat: { id: 4, displayName: 'Meat', price: 10, type: IngredientType.Stuffing, img: meat, component: Meat },
+  salad: { id: 5, displayName: 'Salad', price: 10, type: IngredientType.Stuffing, img: salad, component: Salad },
 };

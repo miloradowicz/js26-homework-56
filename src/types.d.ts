@@ -4,12 +4,14 @@ export enum IngredientType {
 }
 
 export interface BuilderIngredient {
+  get id(): number;
   get displayName(): string;
   get price(): number;
-  get img(): string;
+  get img(): string | undefined;
 }
 
 export interface PreviewIngredient {
+  get id(): number;
   get displayName(): string;
   get component(): FC;
 }

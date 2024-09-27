@@ -2,13 +2,18 @@ import { FC } from 'react';
 import { BuilderIngredient } from '../../../types';
 import './Ingredient.css';
 
-const Ingredient: FC<BuilderIngredient> = ({ displayName, price, img }) => (
+interface IngredientProps {
+  ingredient: BuilderIngredient;
+  amount: number;
+}
+
+const Ingredient: FC<IngredientProps> = ({ ingredient, amount }) => (
   <li>
     <button type='button'>
-      <img src={img} alt={displayName} />
-      <span>{displayName}</span>
+      <img src={ingredient.img} alt={ingredient.displayName} />
+      <span>{ingredient.displayName}</span>
     </button>
-    <span>{price}</span>
+    <span>{ingredient.price}</span>
     <span>{amount}</span>
     <button type='button' aria-label='Delete' />
   </li>

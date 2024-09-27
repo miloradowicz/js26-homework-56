@@ -1,12 +1,19 @@
-export enum LayerType {
+export enum IngredientType {
   Bread,
   Stuffing,
 }
 
-export interface Layer {
+export interface BuilderIngredient {
   get displayName(): string;
   get price(): number;
-  get type(): LayerType;
   get img(): string;
+}
+
+export interface PreviewIngredient {
+  get displayName(): string;
   get component(): FC;
+}
+
+export interface Ingredient extends BuilderIngredient, PreviewIngredient {
+  get type(): LayerType;
 }

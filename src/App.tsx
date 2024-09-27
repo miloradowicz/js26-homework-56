@@ -1,16 +1,15 @@
 import BurgerPreview from './components/BurgerPreview/BurgerPreview';
-import Burger from './components/BurgerPreview/Burger/Burger.tsx';
-import { Layer } from './types.d';
-import { layers } from './data.tsx';
+import { Ingredient } from './types.d';
+import { ingredients } from './static-data.ts';
 import './App.css';
 
-const activeLayers: Layer[] = [];
-activeLayers.push(layers.breadTop, layers.salad, layers.cheese, layers.bacon, layers.cheese, layers.breadBottom);
+const activeLayers: Ingredient[] = [];
+activeLayers.push(ingredients.breadTop, ingredients.salad, ingredients.cheese, ingredients.bacon, ingredients.cheese, ingredients.breadBottom);
 
 const App = () => {
   return (
     <>
-      <BurgerPreview layers={activeLayers} />
+      <BurgerPreview ingredients={activeLayers} />
     </>
   );
 };

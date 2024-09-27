@@ -1,14 +1,14 @@
 import { FC } from 'react';
 import Burger from './Burger/Burger';
-import { Layer } from '../../types.d';
+import { Ingredient } from '../../types.d';
 
 interface BurgerPreviewProps {
-  layers: Layer[];
+  ingredients: Ingredient[];
 }
 
-const BurgerPreview: FC<BurgerPreviewProps> = ({ layers }) => (
+const BurgerPreview: FC<BurgerPreviewProps> = ({ ingredients }) => (
   <div>
-    <Burger layers={layers} />
+    <Burger ingredients={ingredients} />
   </div>
 );
 

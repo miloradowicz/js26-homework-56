@@ -1,11 +1,11 @@
 import { FC, createElement } from 'react';
-import { Layer } from '../../../types.d';
+import { PreviewIngredient } from '../../../types.d';
 import './Burger.css';
 
 interface BurgerProps {
-  layers: Layer[];
+  ingredients: PreviewIngredient[];
 }
 
-const Burger: FC<BurgerProps> = ({ layers }) => <div className='Burger'>{layers.map((x) => createElement(x.component))}</div>;
+const Burger: FC<BurgerProps> = ({ ingredients }) => <div className='Burger'>{ingredients.map((x) => createElement(x.component))}</div>;
 
 export default Burger;

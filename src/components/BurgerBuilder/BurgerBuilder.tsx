@@ -12,11 +12,17 @@ interface BurgerBuilderProps {
 }
 
 const BurgerBuilder: FC<BurgerBuilderProps> = ({ ingredients, selection, price, onItemAdd, onItemDelete }) => (
-  <div className='container'>
+  <div className='container p-5'>
     <h3>Ingredients</h3>
     <ul className='d-flex flex-column gap-2'>
       {ingredients.map((x) => (
-        <IngredientItem ingredient={x} amount={selection.filter((y) => y.id === x.id).length} onAdd={() => onItemAdd(x)} onDelete={() => onItemDelete(x)} />
+        <IngredientItem
+          key={x.id}
+          ingredient={x}
+          amount={selection.filter((y) => y.id === x.id).length}
+          onAdd={() => onItemAdd(x)}
+          onDelete={() => onItemDelete(x)}
+        />
       ))}
     </ul>
     <Price price={price} />

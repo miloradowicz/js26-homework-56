@@ -6,6 +6,6 @@ interface BurgerProps {
   ingredients: PreviewIngredient[];
 }
 
-const Burger: FC<BurgerProps> = ({ ingredients }) => <div className='Burger'>{ingredients.map((x) => createElement(x.component))}</div>;
+const Burger: FC<BurgerProps> = ({ ingredients }) => <div className='Burger'>{ingredients.map((x, i) => createElement(x.component, { key: i }))}</div>;
 
 export default Burger;

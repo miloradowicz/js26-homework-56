@@ -34,7 +34,7 @@ const App = () => {
 
   return (
     <>
-      <h1>Build your dream burger!</h1>
+      <h1 className='mb-5'>Build your dream burger!</h1>
       <div className='container mx-auto d-flex flex-column flex-md-row'>
         <div className='col-12 col-md-6'>
           <BurgerBuilder
@@ -46,7 +46,7 @@ const App = () => {
           />
         </div>
         <div className='col-12 col-md-6'>
-          <BurgerPreview ingredients={[ingredients.breadTop, ...selection, ingredients.breadBottom]} />
+          <BurgerPreview selection={[ingredients.breadTop, ...selection, ingredients.breadBottom]} />
         </div>
       </div>
     </>

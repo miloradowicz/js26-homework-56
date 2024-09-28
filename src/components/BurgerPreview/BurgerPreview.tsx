@@ -3,13 +3,13 @@ import Burger from './Burger/Burger';
 import { PreviewIngredient } from '../../types.d';
 
 interface BurgerPreviewProps {
-  ingredients: PreviewIngredient[];
+  selection: PreviewIngredient[];
 }
 
-const BurgerPreview: FC<BurgerPreviewProps> = ({ ingredients }) => (
+const BurgerPreview: FC<BurgerPreviewProps> = ({ selection }) => (
   <div className='container'>
     <h3>Burger</h3>
-    <Burger ingredients={ingredients} />
+    <Burger selection={selection} />
   </div>
 );
 
